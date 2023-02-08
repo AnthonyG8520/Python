@@ -112,7 +112,7 @@ print(letters)
 listOfNums = [1, 3, 5, 7]
 print(len(listOfNums))
 
-
-
+# variables can be multi assigned in 1 line as well as reassigned
+a, b, c = 3, 2, 1
 
 
