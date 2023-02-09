@@ -17,7 +17,7 @@
 # A match statement takes an expression and compares its value to successive patterns given as one or more case blocks
 # similar to switch case statement
 
-def httpError(status):
+def http_error(status):
     match status:
         case 400:
             return "Bad request"
@@ -30,7 +30,9 @@ def httpError(status):
 # Note the last block: the “variable name” _ acts as a wildcard and
 # never fails to match. If no case matches, none of the branches is executed.
 
-print(httpError(404))
+
+print(http_error(404))
+
 
 # you can combine literals is a single case statement using a single pipe '|' known as "or"
 # case 401 | 403 | 404:
