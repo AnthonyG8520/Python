@@ -13,6 +13,22 @@ def sayhello():
 print(sayhello())
 print(greeting("Anthony"))
 
+
+# We can create a function that writes the fibonacci series to a certain boundary
+# The first statement of the function body can optionally be a string literal;
+# this string literal is the function’s documentation string, or docstring.
+
+def fib(n):    # write Fibonacci series up to n
+    """Print a Fibonacci series up to n."""
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        a, b = b, a+b
+    print()
+
+
+fib(2000)
+
 # It is also possible to define functions with a variable number of arguments.
 # There are three forms, which can be combined.
 
@@ -30,22 +46,25 @@ def hello_there(name=""):
 print(hello_there())
 print(hello_there("Antohny"))
 
-# We can create a function that writes the fibonacci series to a certain boundary
-# The first statement of the function body can optionally be a string literal;
-# this string literal is the function’s documentation string, or docstring.
 
-def fib(n):    # write Fibonacci series up to n
-    """Print a Fibonacci series up to n."""
-    a, b = 0, 1
-    while a < n:
-        print(a, end=' ')
-        a, b = b, a+b
-    print()
+def ask_ok(prompt, retries=4, reminder='Please try again!'):
+    while True:
+        ok = input(prompt)
+        if ok in ('y', 'ye', 'yes'):
+            return True
+        if ok in ('n', 'no', 'nop', 'nope'):
+            return False
+        retries -= 1
+        if retries < 0:
+            raise ValueError('invalid user response')
+        print(reminder)
+
+# This function can be called in several ways:
 
 
-fib(2000)
-
-
+# ask_ok('Do you really want to quit?')
+# ask_ok('OK to overwrite the file?', 2)
+# ask_ok('OK to overwrite the file?', 2, 'Come on, only yes or no!')
 
 
 
