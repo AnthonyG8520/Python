@@ -150,17 +150,77 @@ combined_example(1, standard=2, kwd_only=3)  # will work since second argument d
 # combined_example(pos_only=1, standard=2, kwd_only=3)  # will error for first positionally only argument being called by keyword
 
 
+# -------------------unpacking list arguments--------------------
+
+# The reverse situation occurs when the arguments are already in a list or tuple
+# but need to be unpacked for a function call requiring separate positional arguments.
+# For instance, the built-in range() function expects separate start and stop arguments.
+# If they are not available separately, write the function call
+# with the *-operator to unpack the arguments out of a list or tuple:
 
 
+list(range(3, 6))  # normal call with separate arguments
+# above call will print -> [3, 4, 5]
+
+args = [3, 6]
+list(range(*args))  # call with arguments unpacked from a list
+# above call also prints this [3, 4, 5]
+
+# list(range(args))  # this will result in an error because the list isnt being unpacked before the range function is called
 
 
+# In the same fashion, dictionaries can deliver keyword arguments with the **-operator:
+
+def parrot(voltage, state='a stiff', action='voom'):
+    print("-- This parrot wouldn't", action, end=' ')
+    print("if you put", voltage, "volts through it.", end=' ')
+    print("E's", state, "!")
 
 
+# when using a dictionary the arguments are input by keyword so the order of the arguments in the dictionary dont matter
+# d = {"voltage": "four million", "state": "bleedin' demised", "action": "VOOM"}
+d = {"state": "bleedin' demised", "voltage": "four million", "action": "VOOM"}
+
+parrot(**d)
+# --result -> This parrot wouldn't VOOM if you put four million volts through it. E's bleedin' demised !
+
+# -----------------lambda functions---------------------
+# Small anonymous functions can be created with the lambda keyword.
+# Lambda functions can be used wherever function objects are required.
+# They are syntactically restricted to a single expression.
 
 
+def make_incrementor(n):
+    return lambda x: x + n
 
 
+f = make_incrementor(42)
+print(f(1))
+print(make_incrementor(42)(1))
+# 43
+# the function works either way shown and return the same result
 
+# ---------------------function annotations-----------------
+# Annotations are stored in the __annotations__ attribute of the function as a dictionary
+# and have no effect on any other part of the function.
+# Parameter annotations are defined by a colon after the parameter name,
+# followed by an expression evaluating to the value of the annotation.
+# Return annotations are defined by a literal ->, followed by an expression,
+# between the parameter list and the colon denoting the end of the def statement.
+
+
+def f(ham: str, eggs: str = 'eggs') -> str:
+    print("Annotations:", f.__annotations__)
+    print("Arguments:", ham, eggs)
+    return ham + ' and ' + eggs
+
+
+f('spam')
+
+# result below:
+# Annotations: {'ham': <class 'str'>, 'return': <class 'str'>, 'eggs': <class 'str'>}
+# Arguments: spam eggs
+# 'spam and eggs'
 
 
 
