@@ -1,6 +1,6 @@
 # common useful string methods in python
 
-string = "hello from outer space"
+string = "    hello from outer space    "
 
 print(string.capitalize())
 # converts the first character to upper case
@@ -25,5 +25,26 @@ print(string.upper())
 
 print(string.swapcase())
 # swaps cases - lowercase becomes uppercase and upper becomes lower
+
+print(string.replace(" ", ""))
+# use replace to get rid of white space or remove / replace other characters
+
+print(string.strip())
+# removes leading and trailing whitespace in a string - can strip certain values - whitespace being the default
+
+print(string.split())
+# this will split the string into a list separating by
+# whitespace at default and can input other separators
+# but will not split all single characters into list
+
+# to split all characters into a list separately we can use unpack(*) method
+char_list = [*string.replace(" ", "")]
+print(char_list)
+
+
+
+
+
+
 
 
