@@ -41,7 +41,10 @@ print(string.split())
 char_list = [*string.replace(" ", "")]
 print(char_list)
 
-
+fruits = ['banana', 'apple', 'peach', 'watermelon']
+new_str = ", ".join(fruits)
+print(new_str)
+# use join to turn an iterable into string - must specify seperator at beginning of statement
 
 
 
