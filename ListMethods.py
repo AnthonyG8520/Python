@@ -19,6 +19,13 @@ print(fruits)
 fruits.pop()
 print(fruits)
 
+# in addition to pop() there is popleft() which will remove an element from the front of the list
+# however you need to import the collection.deque package and use different syntax for list
+# this method is not efficient due to speed
+# from collections import deque
+# queue = deque(["Eric", "John", "Michael"])
+# queue.popleft()
+
 # removes the first item with the specified value
 fruits.remove('orange')
 print(fruits)
