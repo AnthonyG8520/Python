@@ -40,8 +40,8 @@ fruits.extend(more_fruits)
 print(fruits)
 
 # removes all the elements from the list
-fruits.clear()
-print(fruits)
+# fruits.clear()
+# print(fruits)
 
 # --------------------List Comprehension---------------------
 # List comprehensions provide a concise way to create lists.
@@ -86,6 +86,20 @@ vegetables = ['   carrot  ', '    brocolli   ']
 
 vegetables = [vegetable.strip() for vegetable in vegetables]
 print(vegetables)
+
+# --------------------the del statement---------------------
+# used to remove an item or items from a given index
+# because pop() can only remove from the end we can use del instead to
+# remove from the beginning of a collection without having to use deque
+
+del fruits[0]
+print(fruits)
+
+del fruits[1:3]
+print(fruits)
+
+# del can also be used to delete entire variables
+
 
 
 
