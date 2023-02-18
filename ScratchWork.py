@@ -8,8 +8,14 @@ def disem_vowel(input):
     return new_str
 
 
+def filter_out_strings(lis):
+    int_list = [num for num in lis if isinstance(num, int)]
+    return int_list
+
+
 print(disem_vowel("Hello"))
 
+print(filter_out_strings([1, 2, 'a', 'b']))
 
 
 
