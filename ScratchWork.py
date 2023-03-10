@@ -12,6 +12,13 @@ def filter_out_strings(lis):
     int_list = [num for num in lis if isinstance(num, int)]
     return int_list
 
+def fizz_buzz(num):
+
+
+
+
+
+
 
 print(disem_vowel("Hello"))
 
