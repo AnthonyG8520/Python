@@ -52,7 +52,7 @@ print('Py' 'thon')
 print('hello'
       'there')
 
-#Strings can be indexed (subscripted), with the first character having index 0.
+# Strings can be indexed (subscripted), with the first character having index 0.
 # There is no separate character type; a character is simply a string of size one
 # Indices may also be negative numbers, to start counting from the right:
 word = 'Python'
