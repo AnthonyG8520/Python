@@ -75,6 +75,21 @@ print(e.tricks)
 # >>> d.tricks                # unexpectedly shared by all dogs
 # ['roll over', 'play dead']
 
+# if the same attribute name occurs in both an instance and in a class, the attribute
+# lookup prioritizes the instance:
+
+
+class Warehouse:
+    purpose = 'storage'
+    region = 'west'
+
+
+print(Warehouse.purpose, Warehouse.region)
+
+w2 = Warehouse()
+w2.region = 'east'
+print(w2.purpose, w2.region)
+
 
 
 
