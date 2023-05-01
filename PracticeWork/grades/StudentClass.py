@@ -29,11 +29,12 @@ class Student:
     def addgrade(self, grade):
         self.grades.append(grade)
 
-    def getgradeaverage(self):
-        grade_total = 0
-        for grade in self.grades:
-            grade_total += grade
-        return str(round(grade_total / len(self.grades), 2))
+
+def getgradeaverage(student):
+    grade_total = 0
+    for grade in student.grades:
+        grade_total += grade
+    return str(round(grade_total / len(student.grades), 2))
 
 # ant = Student('Anthony')
 #

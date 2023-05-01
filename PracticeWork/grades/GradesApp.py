@@ -1,21 +1,29 @@
 from PracticeWork.grades.StudentClass import *
 
-students = []
+students = {}
 
 
 def getinfo(student):
     print("Name: " + student.name)
-    print("Current average: " + student.getgradeaverage())
+    print("Current average: " + getgradeaverage(student))
     student.attendaverage()
     student.daysabsent()
 
 
 def studentreport():
     print("Welcome!\nStudents:")
-
-
-
-
+    for key in students.keys():
+        print(key)
+    print("Choose a student for more info.")
+    user_input = input()
+    if user_input in students:
+        getinfo(students.get(user_input))
+    else:
+        print("That entry doesn't match anything.")
+    print("Would you like to search another student? [Yes/No]")
+    cont = input()
+    if cont.lower() == "yes":
+        studentreport()
 
 
 
@@ -25,7 +33,10 @@ bonk = Student('Bianca')
 jeb = Student("Jeb")
 dave = Student("Dave")
 
-students.extend([ant, bonk, jeb, dave])
+students["Anthony"] = ant
+students["Bianca"] = bonk
+students["Jeb"] = jeb
+students["Dave"] = dave
 
 ant.recordattendance('4/26', 'A')
 ant.recordattendance('4/27', 'P')
@@ -52,5 +63,9 @@ bonk.grades.extend([50, 100, 80])
 jeb.grades.extend([100, 92, 76])
 dave.grades.extend([20, 89, 65])
 
-for student in students:
-    getinfo(student)
+# for student in students:
+#     getinfo(student)
+
+
+studentreport()
+
