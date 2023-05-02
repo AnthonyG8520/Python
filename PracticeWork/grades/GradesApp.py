@@ -22,7 +22,7 @@ def studentreport():
         print("That entry doesn't match anything.")
     print("Would you like to search another student? [Yes/No]")
     cont = input()
-    if cont.lower() == "yes":
+    if cont == "yes" or cont == "Yes":
         studentreport()
 
 
