@@ -39,5 +39,9 @@ print(http_error(404))
 #     return "not allowed"
 
 
-
+match input():
+    case "hello":
+        print("hi")
+    case "goodbye":
+        print("bye")
 
