@@ -17,12 +17,19 @@ def studentreport():
     print("Choose a student for more info.")
     user_input = input()
     if user_input in students:
-        getinfo(students.get(user_input))
+        print("1. Get Student Info\n2. Add Grade")
+        match input():
+            case "1":
+                getinfo(students.get(user_input))
+            case "2":
+                print("Please enter the desired grade.")
+                input_grade = input()
+                students.get(user_input).addgrade(int(input_grade))
     else:
         print("That entry doesn't match anything.")
     print("Would you like to search another student? [Yes/No]")
     cont = input()
-    if cont == "yes" or cont == "Yes":
+    if cont.lower() == "yes":
         studentreport()
 
 
